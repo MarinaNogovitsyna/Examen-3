@@ -69,3 +69,21 @@ console.log(student2);
 
 console.log(student1.averageGrade());
 student2.averageGrade();
+
+
+//Promise
+//Задача 1: Получение данных с сервера
+//Напишите функцию getData, которая получает данные с сервера по указанному URL. 
+//Если данные успешно получены, функция должна вернуть объект данных в виде промиса. 
+//Если при получении данных возникла ошибка, промис должен быть отклонен с ошибкой.
+
+let url = 'https://jsonplaceholder.typicode.com/todos/1'
+
+function getData() {
+   return fetch(url)
+   .then(response => response.json())
+   .then(json => console.log(json))
+   .catch(e => console.error(e));
+}
+
+getData()
